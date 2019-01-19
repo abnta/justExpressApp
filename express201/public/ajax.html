@@ -1,0 +1,21 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+    const ourRequest = $.ajax({
+        method: 'POST',
+        url:'http://localhost:3000/ajax',
+        dataType : "json",
+        data:{
+            name: "Me"
+        }
+    })
+    ourRequest
+            .then((response,statusCode, xmlHttpObj) => {
+                console.log(response);
+                console.log(xmlHttpObj);
+                console.log(statusCode)
+            })
+            .catch(function(err){
+                console.log('error',err.message);
+            })
+</script>
